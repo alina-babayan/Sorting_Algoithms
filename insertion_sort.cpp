@@ -20,11 +20,3 @@ void insertionSort(int arr[], int n)
     }
     std::cout<<std::endl;
 }
-
-int main()
-{
-    int n = 7;
-    int arr[n]={4,9,8,6,2,7,3};
-    insertionSort(arr,n);
-    return 0;
-}
