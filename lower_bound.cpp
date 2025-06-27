@@ -1,20 +1,18 @@
 #include <iostream>
 
-int lower_bound(int arr[], int n, int val)
+template <typename I, typename T>
+I lower_bound(I first, I last, T value)
 {
-    int l = 0;
-    int r = n;
-    while(l < r)
+    while( first != last)
     {
-        int mid = l + (r-l)/2;
-        if(arr[mid] <= val)
+        I mid = first + (last - first)/2;
+        if(*mid < value)
         {
-            l = mid + 1;
+            first = mid + 1;
         }
-        else
-        {
-            r = mid;
+        else{
+            last = mid;
         }
     }
-    return l;
+    return first;
 }
